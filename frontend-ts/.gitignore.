@@ -1,0 +1,18 @@
+
+# Dependências
+node_modules/
+
+# Arquivos de ambiente e credenciais
+.env
+.env.*
+!.env.example
+
+# Compilação
+dist/
+build/
+
+# Logs
+*.log
+
+# Arquivos do sistema
+.DS_Store
