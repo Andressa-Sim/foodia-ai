@@ -1,105 +1,125 @@
 # 🍽️ FoodIA — Assistente Inteligente de Refeições
 
-## Sobre o projeto
+**Aplicação Full Stack com Inteligência Artificial | React | TypeScript | Node.js | Google Gemini**
 
-O FoodIA é um projeto independente de estudos, desenvolvido para praticar Desenvolvimento de Software com Inteligência Artificial.
+## 📌 Sobre o projeto
 
-Seu objetivo é ajudar usuários a encontrar sugestões de refeições considerando preferências alimentares, tipo de refeição e orçamento disponível.
+O **FoodIA** é uma aplicação web que utiliza inteligência artificial para sugerir refeições personalizadas de acordo com as preferências alimentares e o orçamento disponível do usuário.
 
-## Tecnologias
+O projeto foi desenvolvido com o objetivo de aplicar conhecimentos em desenvolvimento web, integração de APIs, organização de código e experiência do usuário.
 
+## 🚀 Funcionalidades
+
+- Seleção do tipo de refeição: café da manhã, almoço, jantar ou lanche.
+- Escolha de preferências alimentares.
+- Definição do orçamento disponível.
+- Geração de sugestões de receitas utilizando Google Gemini.
+- Exibição de ingredientes e quantidades.
+- Instruções de preparo passo a passo.
+- Estimativa de custo dos ingredientes.
+- Interface responsiva para computadores e dispositivos móveis.
+- Validação de campos e apresentação de mensagens de carregamento e erro.
+
+## 🛠️ Tecnologias utilizadas
+
+**Frontend**
 - React
 - TypeScript
+- CSS3
 - Vite
-- HTML e CSS
+- React Markdown
+
+**Backend**
+- Node.js
+- Express
+- TypeScript
+- Google Gemini API
+- Biblioteca `@google/genai`
+
+**Ferramentas**
 - Git e GitHub
-- Jira para acompanhamento ágil
+- Visual Studio Code
+- Jira — Scrum
+- cURL para testes de API
 
-## Funcionalidades
+## 🧠 Como funciona
 
-**Implementadas:**
-- Configuração do ambiente React + TypeScript
-- Interface inicial responsiva em desenvolvimento
-- Personalização visual da página inicial
+1. O usuário seleciona o tipo de refeição.
+2. Informa sua preferência alimentar.
+3. Define o orçamento disponível.
+4. O frontend envia os dados ao backend.
+5. O backend utiliza a API Google Gemini para gerar uma sugestão.
+6. O FoodIA apresenta a receita, ingredientes, preparo e custo estimado.
 
-**Planejadas:**
-- Formulário de preferências alimentares
-- Recomendações de refeições
-- Integração com API de IA generativa
-- Tratamento de erros e testes funcionais
+**Observação:** Os preços são estimativas geradas pela IA e podem variar conforme a região e o estabelecimento. Não representam uma consulta de preços em tempo real.
 
-## Como executar
+## 💻 Como executar localmente
+
+**Pré-requisitos:** Node.js, npm e uma chave válida da API Google Gemini.
+
+Clone o repositório:
 
 ```bash
 git clone https://github.com/Andressa-Sim/foodia-ai.git
-cd foodia-ai/frontend-ts
-npm install
-npm run dev
+cd foodia-ai
 ```
 
-## Organização do desenvolvimento
-
-O projeto utiliza um quadro Scrum no Jira para acompanhar tarefas, evolução e entregas.
-
-## Autoria
-
-
-Desenvolvido por Andressa Alves Simão.
-
-Projeto educacional independente, sem vínculo oficial com o iFood.
-
-## Backend — FoodIA
-
-### Tecnologias utilizadas
-- Node.js
-- TypeScript
-- Express
-- API REST
-
-### Funcionalidades
-- Recebimento de dados do formulário de refeições.
-- Validação dos campos obrigatórios.
-- Validação de orçamento maior que zero.
-- Respostas JSON com códigos HTTP adequados.
-- Estrutura modular para futura integração com Google Gemini.
-
-### Executando o backend
+Configure o backend:
 
 ```bash
 cd backend
 npm install
+```
+
+Crie um arquivo `.env` na pasta `backend`:
+
+```env
+GEMINI_API_KEY=sua_chave_aqui
+```
+
+Inicie o backend conforme os scripts disponíveis no `package.json`.
+
+Em outro terminal, execute o frontend:
+
+```bash
+cd frontend-ts
+npm install
 npm run dev
 ```
 
-Servidor disponível em `http://localhost:3001`.
+Abra o endereço local informado pelo Vite.
 
-### Endpoints
+**Segurança:** Nunca publique sua chave de API no GitHub.
 
-**GET /health**
+## 📱 Interface e responsividade
 
-Verifica o funcionamento do servidor.
+A interface foi desenvolvida com foco em simplicidade, legibilidade e adaptação a diferentes tamanhos de tela.
 
-**POST /api/refeicoes**
+O projeto foi testado em ambiente desktop e por meio da simulação de dispositivos móveis no navegador.
 
-Recebe os seguintes dados:
+## 📋 Organização do desenvolvimento
 
-```json
-{
-  "tipoRefeicao": "Almoço",
-  "preferenciaAlimentar": "Vegetariana",
-  "orcamento": 25
-}
-```
+O projeto utiliza práticas de Scrum com acompanhamento de atividades no Jira, incluindo planejamento, implementação, testes e documentação.
 
-### Testes realizados
+## 🔮 Melhorias futuras
 
-| Cenário | HTTP | Resultado |
-|---|---|---|
-| Servidor funcionando | 200 | Aprovado |
-| Dados válidos | 200 | Aprovado |
-| Orçamento igual a zero | 400 | Aprovado |
-| Tipo de refeição vazio | 400 | Aprovado |
+- Histórico de receitas geradas.
+- Sistema de receitas favoritas.
+- Comparação de preços com dados reais de supermercados.
+- Filtros por ingredientes disponíveis em casa.
+- Melhorias de acessibilidade.
+- Testes automatizados.
 
-### Próximas melhorias
+## 👩‍💻 Desenvolvedora
 
-Integração com Google Gemini para geração de sugestões inteligentes de refeições, em tarefa futura.
+**Andressa Alves Simão**
+
+Bacharelado em Sistemas de Informação | Desenvolvimento Web | Full Stack | Inteligência Artificial
+
+- [GitHub](https://github.com/Andressa-Sim)
+- [Portfólio](https://andressa-sim.github.io/IPortifolio/)
+- [LinkedIn](https://www.linkedin.com/in/andressa-simao)
+
+---
+
+**FoodIA — Tecnologia para ajudar a planejar refeições de forma prática e econômica.**
