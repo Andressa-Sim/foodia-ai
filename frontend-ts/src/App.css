@@ -129,3 +129,131 @@ body {
   background-repeat: no-repeat;
   background-attachment: fixed;
 }
+.resultado {
+  margin: 30px auto;
+  padding: 24px;
+  max-width: 750px;
+  background: rgba(20, 20, 30, 0.88);
+  border-radius: 16px;
+  color: #fff;
+  text-align: left;
+  line-height: 1.7;
+}
+
+.resultado h2 {
+  text-align: center;
+  color: #ff647c;
+}
+
+.resultado h3 {
+  color: #ffb3c1;
+  margin-top: 24px;
+}
+
+.resultado p,
+.resultado li {
+  font-size: 16px;
+  font-weight: 400;
+}
+
+.resultado ul,
+.resultado ol {
+  padding-left: 24px;
+}
+
+@media (max-width: 600px) {
+  .resultado {
+    padding: 16px;
+    margin: 20px 12px;
+  }
+}
+/* Ajustes de responsividade do FoodIA */
+
+html {
+  width: 100%;
+  overflow-x: hidden;
+}
+
+body {
+  width: 100%;
+  overflow-x: hidden;
+}
+
+#root {
+  width: 100%;
+  min-width: 0;
+}
+
+main {
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 80px 20px;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+.formulario-refeicao,
+.resultado {
+  min-width: 0;
+  box-sizing: border-box;
+}
+
+.formulario-refeicao .campo {
+  min-width: 0;
+}
+
+.formulario-refeicao select,
+.formulario-refeicao input {
+  display: block;
+  width: 100%;
+  min-width: 0;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+.resultado {
+  width: 100%;
+  max-width: 750px;
+  overflow-wrap: anywhere;
+}
+
+@media (max-width: 600px) {
+  main {
+    padding: 35px 16px;
+  }
+
+  h1 {
+    font-size: 2rem;
+  }
+
+  h2 {
+    font-size: 1.4rem;
+  }
+
+  .formulario-refeicao {
+    width: 100%;
+    padding: 20px 16px;
+    margin: 20px auto;
+  }
+
+  .resultado {
+    width: 100%;
+    margin: 20px auto;
+    padding: 18px 16px;
+  }
+
+  .resultado h2 {
+    font-size: 1.35rem;
+  }
+
+  .resultado h3 {
+    font-size: 1.15rem;
+  }
+
+  .resultado p,
+  .resultado li {
+    font-size: 14px;
+    line-height: 1.6;
+  }
+}

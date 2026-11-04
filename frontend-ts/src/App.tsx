@@ -1,22 +1,52 @@
 import { useState } from "react";
 import "./App.css";
+import ReactMarkdown from "react-markdown";
 
 function App() {
   const [tipoRefeicao, setTipoRefeicao] = useState<string>("");
   const [preferencia, setPreferencia] = useState<string>("");
   const [orcamento, setOrcamento] = useState<number>(0);
-  function encontrarRefeicoes() {
+  const [sugestao, setSugestao] = useState<string>("");
+  const [carregando, setCarregando] = useState(false);
+  const [erro, setErro] = useState<string>("");
+  
+async function encontrarRefeicoes() {
   if (!tipoRefeicao || !preferencia || orcamento <= 0) {
     alert("Preencha todos os campos e informe um orçamento maior que zero.");
     return;
   }
 
-  alert(
-    `Tipo: ${tipoRefeicao}\n` +
-    `Preferência: ${preferencia}\n` +
-    `Orçamento: R$ ${orcamento.toFixed(2)}`
-  );
+  setCarregando(true);
+  setErro("");
+  setSugestao("");
+
+  try {
+    const resposta = await fetch("http://localhost:3001/api/refeicoes", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        tipoRefeicao,
+        preferenciaAlimentar: preferencia,
+        orcamento,
+      }),
+    });
+
+    if (!resposta.ok) {
+      throw new Error("Erro ao gerar sugestão.");
+    }
+
+    const dados = await resposta.json();
+    setSugestao(dados.sugestao);
+  } catch (error) {
+    setErro("Não foi possível conectar ao FoodIA. Tente novamente.");
+    console.error(error);
+  } finally {
+    setCarregando(false);
+  }
 }
+
 
   return (
     <main>
@@ -78,7 +108,17 @@ function App() {
             Encontrar refeições
           </button>
         </div>
-    </main>
+        {carregando && <p>Gerando sua refeição...</p>}
+
+{erro && <p className="erro">{erro}</p>}
+
+{sugestao && (
+  <section className="resultado">
+    <h2>🍽️ Sugestão do FoodIA</h2>
+    <ReactMarkdown>{sugestao}</ReactMarkdown>
+  </section>
+)}
+</main>
   );
 }
 
