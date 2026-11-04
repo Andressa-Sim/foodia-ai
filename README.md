@@ -110,6 +110,14 @@ O projeto utiliza práticas de Scrum com acompanhamento de atividades no Jira, i
 - Melhorias de acessibilidade.
 - Testes automatizados.
 
+## 📸 Demonstração do FoodIA
+
+### Página inicial
+![Página inicial do FoodIA](screenshots/foodia.inicio.png)
+
+### Receita gerada pela inteligência artificial
+![Sugestão de receita](screenshots/foodia.receita.png)
+
 ## 👩‍💻 Desenvolvedora
 
 **Andressa Alves Simão**
