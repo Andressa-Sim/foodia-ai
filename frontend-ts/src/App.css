@@ -1,4 +1,3 @@
-
 #root {
   width: 100%;
   min-height: 100vh;
@@ -28,44 +27,6 @@ p {
   margin-bottom: 30px;
 }
 
-
-button {
-  background-color: #7c3aed;
-  color: #ffffff;
-  border: 2px solid #7c3aed;
-  padding: 14px 28px;
-  border-radius: 10px;
-  font-size: 16px;
-  font-weight: 600;
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-
-button:hover {
-  background-color: #6d28d9;
-  border-color: #6d28d9;
-  color: #ffffff;
-}
-
-button:focus-visible {
-  outline: 3px solid #c4b5fd;
-  outline-offset: 3px;
-}
-main button {
-  background-color: #ea1d25;
-  color: #ffffff;
-  border: none;
-  padding: 15px 30px;
-  border-radius: 10px;
-  font-size: 16px;
-  font-weight: 600;
-  cursor: pointer;
-}
-
-main button:hover {
-  background-color: #c41625;
-  
-}
 main h1 {
   color: #ffffff;
 }
@@ -76,7 +37,95 @@ main p {
   line-height: 1.6;
 }
 
-main button {
-  background-color: #ea1d2c;
-  color: #ffffff;
+.formulario-refeicao {
+  width: 100%;
+  max-width: 420px;
+  margin: 35px auto;
+  padding: 28px;
+  background: rgba(20, 15, 25, 0.82);
+  border-radius: 18px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.campo label {
+  color: white;
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.campo {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.campo select,
+.campo input {
+  width: 100%;
+  padding: 12px;
+  box-sizing: border-box;
+  border-radius: 8px;
+}
+
+.botao-encontrar {
+  width: 100%;
+  padding: 14px;
+  box-sizing: border-box;
+  background: #f05a72;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.botao-encontrar:hover {
+  background: #d94360;
+}
+
+.botao-encontrar:focus-visible {
+  outline: 3px solid #ffffff;
+  outline-offset: 3px;
+}
+
+@media (max-width: 480px) {
+  .formulario-refeicao {
+    padding: 20px;
+    margin: 20px auto;
+  }
+}
+.formulario-refeicao .campo {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.formulario-refeicao .campo select,
+.formulario-refeicao .campo input {
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+
+  background-image:
+    linear-gradient(
+      rgba(0, 0, 0, 0.35),
+      rgba(0, 0, 0, 0.55)
+    ),
+    url('/foodia-bg.png');
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
 }
